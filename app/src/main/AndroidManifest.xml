@@ -13,14 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SecondActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".DeepLinkDispatcherActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -31,6 +27,24 @@
                 <data android:pathPattern="/search/..*" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".FourthActivity"
+            android:parentActivityName=".ThirdActivity" />
+
+        <activity
+            android:name=".ThirdActivity"
+            android:parentActivityName=".SecondActivity" />
+
+        <activity android:name=".FirstActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SecondActivity"
+            android:parentActivityName=".FirstActivity"/>
     </application>
 
 </manifest>
