@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
 
         val l = listOf<MyData>(MyData(1,"1",1), MyData(2,"2",2), MyData(3,"33",3))
 
-        adapter.notifyAboutChanges(l)
+        adapter.setList(l)
 
         val handler = Handler()
 
         handler.postDelayed(Runnable {
             val m = listOf<MyData>(MyData(2,"7",7), MyData(3,"8",8),MyData(1,"1",1))
-            adapter.notifyAboutChanges(m)
+            adapter.setList(m)
         },4000)
     }
 

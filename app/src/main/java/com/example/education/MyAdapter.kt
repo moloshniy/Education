@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
 import java.util.zip.Inflater
+import kotlin.collections.ArrayList
+import kotlin.properties.Delegates
 
 
 /**
@@ -22,13 +25,16 @@ import java.util.zip.Inflater
 
 class MyAdapter constructor(private val context: Context) :
     RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
-    private var myList: List<MyData> = ArrayList()
+    private var myList: List<MyData> by Delegates.observable(emptyList()) { prop, oldList, newList ->
+        notifyAboutChanges(oldList,newList)
+    }
+     fun setList(list:List<MyData>){
+         myList = list
+     }
 
-    fun notifyAboutChanges(newList: List<MyData>) {
-        val _oldList = myList
-        myList = newList
 
-        val diff = MyDiffUtilCallback(_oldList, myList)
+    fun notifyAboutChanges(oldList:List<MyData>, newList: List<MyData>) {
+        val diff = MyDiffUtilCallback(oldList, newList)
         val result = DiffUtil.calculateDiff(diff)
         result.dispatchUpdatesTo(this)
     }
