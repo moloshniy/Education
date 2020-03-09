@@ -16,20 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val dates:Dates = Dates()
-       dates.addElement(Date(1))
-        dates.addElement(Date(2))
-        dates.addElement(Date(3))
-        for (d in dates){
-                Log.e("qqq",d.int.toString())
+        Car.CarBuilder().addCarColor("green").build()
+        Car2.addWheel(1).addCarColor("2").build()
+        val c3:Car3 = Car3.builder {
+            this.addAge(11)
+            this.addName(11)
         }
-        for (d in dates){
-            Log.e("qqq",d.int.toString())
-        }
-        for (d in dates){
-            Log.e("qqq",d.int.toString())
-        }
-
-
     }
 }
