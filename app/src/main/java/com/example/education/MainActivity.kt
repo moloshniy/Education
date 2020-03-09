@@ -6,20 +6,15 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
 
+
+//Simple example of using ClosedRange Interface
+//
 class MainActivity : AppCompatActivity() {
-     var str:String by MyDelegate().myDelegateInActivityForString()
-     var str2:String? by MyDelegate().myDelegateInAnyForAny()
-     var myInt:Int by NotEvenDelegate()
+
+ val myRange = Date(1997,12)..Date(1998,11)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        myInt = 1
-        myInt = 2
-        myInt = 3
-
-        str = "first"
-        str = "second"
-        str =  "third"
     }
 }
