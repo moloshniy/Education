@@ -18,13 +18,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="send Request"
-        android:onClick="getUser"/>
+        android:text="BUTTON" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="removeLastFromDB"
-        android:onClick="removeLastFromDB"/>
 
 </LinearLayout>
