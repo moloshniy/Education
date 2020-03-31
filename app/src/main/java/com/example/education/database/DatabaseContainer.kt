@@ -2,6 +2,7 @@ package com.example.education.database
 
 import android.util.Log
 import com.example.education.entity.Person
+import com.example.education.entity.PersonDetails
 import io.reactivex.rxjava3.core.Observable
 import tag
 import kotlin.random.Random
@@ -19,7 +20,8 @@ class DatabaseContainer {
             personList.add(
                 Person(
                     "Database- $i",
-                    i
+                    i,
+                    PersonDetails()
                 )
             )
         }

@@ -2,6 +2,7 @@ package com.example.education.server
 
 import android.util.Log
 import com.example.education.entity.Person
+import com.example.education.entity.PersonDetails
 import com.example.education.server.errors.BadInternetConnectionException
 import com.example.education.server.errors.ServerException
 import io.reactivex.rxjava3.core.Observable
@@ -39,8 +40,9 @@ class ServerSource {
                 Log.e(tag(), "retry  +  $it")
                 it is BadInternetConnectionException
             }
+    }
 
-
-
+    fun getPersonDetails(person:Person): Observable<PersonDetails> {
+            return serverContainer.getPersonDetails(person)
     }
 }

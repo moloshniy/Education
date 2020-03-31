@@ -1,13 +1,8 @@
 package com.example.education.server
 
-import android.util.Log
 import com.example.education.entity.Person
-import com.example.education.server.errors.BadInternetConnectionException
+import com.example.education.entity.PersonDetails
 import io.reactivex.rxjava3.core.Observable
-import tag
-import java.io.IOException
-import java.lang.NullPointerException
-import kotlin.random.Random
 
 class ServerContainer {
 
@@ -22,7 +17,8 @@ class ServerContainer {
             personList.add(
                 Person(
                     "server- $i",
-                    i
+                    i,
+                    PersonDetails()
                 )
             )
         }
@@ -30,7 +26,7 @@ class ServerContainer {
 
     fun getAllPersonsRxObservable(): Observable<List<Person>> {
         return Observable.create {
-         //  Thread.sleep(1500)
+            //  Thread.sleep(1500)
 //            val i:Int = Random.nextInt(4)
 //            Log.e(tag(),"$i")
 //            when (i) {
@@ -46,4 +42,10 @@ class ServerContainer {
             it.onComplete()
         }
     }
+
+    fun getPersonDetails(person: Person): Observable<PersonDetails> {
+        return Observable.just(PersonDetails(person.age * 10))
+    }
+
+
 }
