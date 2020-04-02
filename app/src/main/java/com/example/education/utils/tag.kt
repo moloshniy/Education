@@ -1,3 +1,3 @@
 inline fun <reified T : Any> T.tag(): String {
-    return T::class.java.name
+    return "qqq" + T::class.java.name
 }

@@ -1,5 +1,7 @@
 package com.example.education.doc
 
+import android.util.Log
+
 /** concat(): operator concatenate two or more observables in such a way
  * that it acts like single observable. All items of each observable are emitted sequentially as passed
  * in parameter (concat(onservable1, obvervable2,...)).
@@ -29,7 +31,7 @@ package com.example.education.doc
  *
  * DoOnNext  - вызывается каждый раз когда приходит onNext
  *
- *onErrorResumeNext!!!
+ * OnErrorResumeNext  Это сделать с помощью метода onErrorResumeNext. Этот метод в случае возникновения ошибки в исходном потоке данных меняет его на другой поток данных, который передается в параметре.
  *
  *
  *
@@ -47,7 +49,7 @@ package com.example.education.doc
  *
  *
  *
- * delay
+ * delay - делает задержку
  *
  *
  *
@@ -144,4 +146,45 @@ package com.example.education.doc
 BiFunction<Int,Long,Int>{s1,s2->
 s1
 })
+
+
+
+
+The {@code Observable}'s operators, by default, run with a buffer size of 128 elements (see {@link Flowable#bufferSize()}),
+ * that can be overridden globally via the system parameter {@code rx3.buffer-size}. Most operators, however, have
+ * overloads that allow setting their internal buffer size explicitly.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
+
+
+//Observable .create(ObservableOnSubscribe<Int> {
+//    repeat(20000000) { i ->
+//        it.onNext(i)
+//    }
+//    Log.e(tag() + "obs","obs-complite")
+//    it.onComplete()
+//}).subscribeOn(Schedulers.computation())
+//.observeOn(Schedulers.io())
+//
+//
+//.subscribe ({
+//    Thread.sleep(2000)
+//    Log.e(tag() + "subs", "subs ${Thread.currentThread().name}  $it")
+//},{
+//    Log.e(tag(), " THOWWW")
+//    throw it
+//},{
+//    Log.e(tag(),"subs-complite")
+//})
+
+
+//https://medium.com/@mohitsharma_16765/rxsubjects-cold-and-hot-observables-connectableobservable-6ab0f3020876
