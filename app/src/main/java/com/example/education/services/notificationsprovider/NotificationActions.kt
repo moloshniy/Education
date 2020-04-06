@@ -42,7 +42,7 @@ class NotificationActions(private val context: Context) {
         val intent = Intent(context, MediaService::class.java).apply { action = "PAUSE" }
         val pending = PendingIntent.getService(
             context,
-            1,
+            2,
             intent,
             PendingIntent.FLAG_UPDATE_CURRENT
         )

@@ -7,6 +7,7 @@ import androidx.core.app.NotificationCompat
 import com.example.education.R
 
 class NotificationProvider(private val context: Context) {
+    var b = false
     var icon:Int = 0
     private val notificationActions: NotificationActions by lazy {
         NotificationActions(
@@ -15,6 +16,7 @@ class NotificationProvider(private val context: Context) {
     }
 
     fun sendForegroundNotification() {
+
         if (icon == R.drawable.avd_cross_to_tick){
             icon = R.drawable.avd_tick_to_cross
         }
@@ -22,7 +24,6 @@ class NotificationProvider(private val context: Context) {
             icon = R.drawable.avd_cross_to_tick
         }
         else icon = R.drawable.avd_cross_to_tick
-
 
 
         val playAction = notificationActions.getPlayAction()
@@ -41,5 +42,6 @@ class NotificationProvider(private val context: Context) {
             )
             .build()
         (context as Service).startForeground(1, notification)
+        b= true
     }
 }
