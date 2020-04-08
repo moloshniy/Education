@@ -1,5 +1,6 @@
 package com.example.education
 
+import android.util.Log
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,5 +14,15 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun `fist test`(){
+        print("First test")
+    }
+
+    @Test
+    fun `Base assertions`() {
+        assertEquals("a", "a")
     }
 }
