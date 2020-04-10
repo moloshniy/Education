@@ -17,11 +17,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val r = findViewById<RecyclerView>(R.id.recycler)
-        r.adapter = Adapter()
-        r.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-
     }
-
-
 }
