@@ -2,21 +2,15 @@ package com.example.education
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import android.util.Log
+import org.koin.android.ext.android.inject
+import org.koin.core.KoinComponent
 
-class MainActivity : AppCompatActivity(), Fragment0.Fr0Finish{
-private val navController:NavController by lazy {
-    findNavController(R.id.nav_host_fragment)
-}
+class MainActivity : AppCompatActivity(), KoinComponent{
+  private val str:String by inject()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        navController.navigate(R.id.action_fragment1_to_fragment0)
-    }
 
-    override fun finish0() {
-        navController.popBackStack()
     }
-
 }
