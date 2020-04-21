@@ -1,0 +1,33 @@
+ext {
+    materialVersion = "1.1.0"
+    materialDependencies = [
+            uiMaterial: "com.google.android.material:material:$materialVersion"
+    ]
+
+    kotlinStdLibVersion = "1.3.70"
+    kotlibStdLibDepndencies = [
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinStdLibVersion"
+    ]
+
+    koinVersion = "2.1.3"
+    koinDependencies = [
+            koinViewModel: "org.koin:koin-androidx-viewmodel:$koinVersion"
+    ]
+
+    appCompatVersion = "1.1.0"
+    appCompatDependencies = [
+            appcompat: "androidx.appcompat:appcompat:$appCompatVersion"
+    ]
+
+    androidxCoreKtxVersion = "1.2.0"
+    androidxCoreKtxDependencies = [
+            androidxCoreKtx: "androidx.core:core-ktx:$androidxCoreKtxVersion"
+    ]
+
+    constraintLayoutVersion = "1.1.3"
+    constraintLayoutDependencies = [
+            constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    ]
+
+
+}

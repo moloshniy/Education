@@ -1,26 +1,19 @@
-apply plugin: 'com.android.application'
-
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-
 android {
-
-    dataBinding {
-        enabled = true
-    }
-
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+
     defaultConfig {
-        applicationId "com.example.education"
-        minSdkVersion 26
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -29,14 +22,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    implementation rootProject.ext.koinDependencies.values()
     implementation rootProject.ext.kotlibStdLibDepndencies.values()
-
-    implementation project(':main-data')
-    implementation project(':main-domain')
-    implementation project(':main-ui')
-
+    implementation rootProject.ext.appCompatDependencies.values()
+    implementation rootProject.ext.androidxCoreKtxDependencies.values()
+    implementation rootProject.ext.materialDependencies.values()
+    implementation rootProject.ext.constraintLayoutDependencies.values()
 }

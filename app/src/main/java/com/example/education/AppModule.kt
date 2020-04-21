@@ -4,5 +4,6 @@ import org.koin.dsl.module
 
 @JvmField
 val appModule = module {
+    single {  }
     factory {"Hello String "}
 }

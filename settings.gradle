@@ -1,2 +1,12 @@
-include ':app'
+include ':app', ':database'
+
+include ':main-ui'
+project(':main-ui').projectDir = new File('main/ui')
+
+include ':main-data'
+project(':main-data').projectDir = new File('main/data')
+
+include ':main-domain'
+project(':main-domain').projectDir = new File('main/domain')
+
 
